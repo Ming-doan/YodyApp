@@ -209,7 +209,7 @@ class _DetailState extends State<Detail> {
                             borderRadius: BorderRadius.circular(20.0),
                             gradient: LinearGradient(
                               colors: [
-                                Color.alphaBlend(Colors.white30, currentColor),
+                                Color.alphaBlend(Colors.white24, currentColor),
                                 currentColor,
                               ],
                             ),

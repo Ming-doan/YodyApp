@@ -1,3 +1,4 @@
+import 'package:clothing_store_app_ui/camera_page.dart';
 import 'package:clothing_store_app_ui/components/constants.dart';
 import 'package:clothing_store_app_ui/home.dart';
 import 'package:clothing_store_app_ui/models/app.dart';
@@ -19,10 +20,7 @@ class _MainPageState extends State<MainPage> {
   );
   static List<Widget> _widgetOptions = <Widget>[
     Home(),
-    Text(
-      "second Page",
-      style: optionStyle,
-    ),
+    CameraPage(),
     Text(
       "third Page",
       style: optionStyle,
