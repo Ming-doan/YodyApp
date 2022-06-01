@@ -73,7 +73,7 @@ class CameraPage extends StatelessWidget {
                 padding: EdgeInsets.all(10.0),
                 child: Center(
                   child: Text(
-                    "Open Magic Camera",
+                    "Launch Magic Camera",
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,

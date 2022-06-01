@@ -13,7 +13,7 @@ class Camera extends StatefulWidget {
 
 class _CameraState extends State<Camera> {
   late CameraController controller;
-  late XFile pictureFile;
+  late XFile? pictureFile;
   late CameraDescription currentCamera;
 
   void camSetup() {
@@ -50,9 +50,15 @@ class _CameraState extends State<Camera> {
     setState(() {});
   }
 
+  // void handleTakePicture() async {
+  //   pictureFile = await controller.takePicture();
+  //   setState(() {});
+  // }
+
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
 
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
         statusBarColor: ColorPalette.yodyyellow,
@@ -65,8 +71,8 @@ class _CameraState extends State<Camera> {
             Positioned(
                 top: 0,
                 child: Container(
-                  width: width,
-                  height: (width / 9) * 16,
+                  width: (height / 16) * 9,
+                  height: height,
                   child: !controller.value.isInitialized
                       ? Container()
                       : CameraPreview(controller),
@@ -101,38 +107,56 @@ class _CameraState extends State<Camera> {
                   ),
                 )),
             Positioned(
-                bottom: 10.0,
+                bottom: BoxSpace.paddingDefault,
                 left: 0,
                 right: 0,
                 child: Column(
                   children: [
                     ClothesCategories(),
                     SizedBox(
-                      height: BoxSpace.paddingSmall,
+                      height: BoxSpace.paddingDefault,
                     ),
-                    Center(
-                      child: Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(60),
-                            border: Border.all(
-                                color: ColorPalette.yodyyellow, width: 5)),
-                        width: 65,
-                        height: 65,
-                        child: TextButton(
-                          style: TextButton.styleFrom(
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(60)),
-                              padding: EdgeInsets.zero,
-                              primary: Colors.white),
-                          onPressed: () {},
-                          child: Container(
-                            margin: EdgeInsets.all(2.0),
-                            decoration: BoxDecoration(
-                                color: ColorPalette.yodyyellow,
-                                borderRadius: BorderRadius.circular(60)),
+                    Row(
+                      children: [
+                        SizedBox(),
+                        Expanded(
+                          child: Center(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(60),
+                                  border: Border.all(
+                                      color: ColorPalette.yodyyellow,
+                                      width: 5)),
+                              width: 65,
+                              height: 65,
+                              child: TextButton(
+                                style: TextButton.styleFrom(
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(60)),
+                                    padding: EdgeInsets.zero,
+                                    primary: Colors.white),
+                                onPressed: () {
+                                  // handleTakePicture();
+                                },
+                                child: Container(
+                                  margin: EdgeInsets.all(2.0),
+                                  decoration: BoxDecoration(
+                                      color: ColorPalette.yodyyellow,
+                                      borderRadius: BorderRadius.circular(60)),
+                                ),
+                              ),
+                            ),
                           ),
                         ),
-                      ),
+                        // Container(
+                        //   decoration: pictureFile != null
+                        //       ? BoxDecoration(
+                        //           image: DecorationImage(
+                        //               image: NetworkImage(pictureFile!.path)))
+                        //       : BoxDecoration(color: ColorPalette.darkColor),
+                        // ),
+                      ],
                     ),
                   ],
                 ))
