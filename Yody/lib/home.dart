@@ -1,12 +1,9 @@
-import 'dart:ui';
 import 'package:clothing_store_app_ui/components/product_item.dart';
-import 'package:clothing_store_app_ui/main_page.dart';
 import 'package:clothing_store_app_ui/models/categories.dart';
 import 'package:clothing_store_app_ui/services/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
-import 'package:clothing_store_app_ui/detail.dart';
 import './components/constants.dart';
 import 'components/discover-circle.dart';
 import 'models/app.dart';

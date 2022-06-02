@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Product {
-  late double Id;
+  late double id;
   late String name;
   late String detail;
   late List<String> images;
@@ -9,7 +9,7 @@ class Product {
   late List<Color> colors;
 
   Product({
-    required this.Id,
+    required this.id,
     required this.name,
     required this.detail,
     required this.images,

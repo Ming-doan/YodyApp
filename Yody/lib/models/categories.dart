@@ -2,7 +2,7 @@ import 'package:clothing_store_app_ui/models/product.dart';
 import 'package:flutter/material.dart';
 
 class Category {
-  late double Id;
+  late double id;
   late String name;
   late String detail;
   late String image;
@@ -10,7 +10,7 @@ class Category {
   late List<Product> products;
 
   Category(
-      {required this.Id,
+      {required this.id,
       required this.name,
       required this.detail,
       required this.image,

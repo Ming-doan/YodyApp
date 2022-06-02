@@ -32,7 +32,7 @@ class DisCoverCircle extends StatelessWidget {
                 decoration: BoxDecoration(
                     image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: AssetImage('images/${image}'),
+                  image: AssetImage('images/$image'),
                 )),
               ),
             ),
@@ -47,6 +47,5 @@ class DisCoverCircle extends StatelessWidget {
         ],
       ),
     );
-    ;
   }
 }

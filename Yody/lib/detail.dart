@@ -65,7 +65,7 @@ class _DetailState extends State<Detail> {
                             ],
                             image: DecorationImage(
                               fit: BoxFit.cover,
-                              image: AssetImage('images/${image}'),
+                              image: AssetImage('images/$image'),
                             ),
                           ),
                           child: Padding(
